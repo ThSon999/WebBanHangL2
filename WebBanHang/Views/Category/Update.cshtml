@@ -1,0 +1,25 @@
+﻿@model Category
+<br>
+<partial name="_Notification" />
+<form asp-action="Update" method="post">
+    <input type="hidden" asp-for="Id" />
+    <h2 class="text-primary">Edit Category</h2>
+    <hr />
+    <div class="form-group ">
+        <label class="text-primary">Name</label>
+        <input asp-for="Name" class="form-control text-primary" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label class="text-primary">Display Order</label>
+        <input asp-for="DisplayOrder" class="form-control text-primary" />
+        <span asp-validation-for="DisplayOrder" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-outline-success"> Update </button>
+    <a asp-action="Index" class="btn btn-outline-secondary">Back to List</a>
+</form>
+
+
+@section Scripts{
+    <partial name="_ValidationScriptsPartial">
+}
